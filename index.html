@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="signup" class="form-container signup">
+          <form >       
+            <h1>Create Account</h1>               
+            <input id="fname" name="fname" type="text" placeholder="First Name">
+            <input id="lname" name="lname" type="text" placeholder="Last Name">
+            <input id="email" name="email" type="email" placeholder="Email  ">
+            <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Confirm Password"><span id="error-message" class="error"></span>
+           <button type="submit">SIGN UP</button>
+          </form>
+        </div>
+        <div id="login" class="form-container login">
+          <form >       
+              <h1>Sign in</h1> 
+              <input id="email" name="email" type="email" placeholder="Email">
+              <input id="password" name="password" type="password" placeholder="Password">
+              <button type="submit">SIGN IN</button>
+          </form>
+        </div>
+        <div id="panelr" class="side-panel">
+          <h2>Welcome Back!</h2>
+          <p> Let's Sign in!</p>
+          <button id="press2" class="trans">SIGN IN</button>
+        </div>
+        <div id="panell" class="side-panel">
+          <h2>Don't have an account?</h2>
+          <p> Please Sign up!</p>
+          <button id="press" class="trans">SIGN UP</button>
+        </div>
+      </div>  
+    <script defer>      
+      document.getElementById("press").addEventListener("click", function () {    
+          document.getElementById("panelr").classList.add('show_panel');
+          document.getElementById("panell").classList.add('hide_panel');
+          document.getElementById("signup").classList.add('show_cont');
+          document.getElementById("login").classList.add('hide_cont');    
+      });
+    
+      document.getElementById("press2").addEventListener("click", function () {
+          document.getElementById("panelr").classList.remove('show_panel');
+          document.getElementById("panell").classList.remove('hide_panel');
+          document.getElementById("signup").classList.remove('show_cont');
+          document.getElementById("login").classList.remove('hide_cont');        
+      });
+    </script>   
+</body>
+</html>

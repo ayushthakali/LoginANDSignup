@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f6f5f7;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.25);
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Panel Styles */
+.side-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+  background-color: #FF4B2B;
+  transition: transform 0.5s ease;
+  position: absolute;
+}
+
+.right-panel {
+  right: 0;
+}
+
+.left-panel {
+  left: 0;
+}
+
+/* Form Container */
+.form-container {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+}
+
+#signup {
+  right: -100%;
+  opacity: 0;
+  z-index: 1;
+}
+
+#login {
+  left: 0;
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid #FF4B2B;
+  background-color: #FF4B2B;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  margin-top: 20px;
+  transition: transform 80ms ease-in;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.trans {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+}
+
+/* Slide to the Sign-Up view */
+.signup-active #login {
+  transform: translateX(-100%);
+}
+
+.signup-active #signup {
+  transform: translateX(-100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+.signup-active .left-panel {
+  transform: translateX(100%);
+}
+
+.signup-active .right-panel {
+  transform: translateX(0);
+}

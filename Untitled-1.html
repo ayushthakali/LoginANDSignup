@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="signup" class="form-container">
+            <form>       
+                <h1>Create Account</h1>               
+                <input id="fname" name="fname" type="text" placeholder="First Name">
+                <input id="lname" name="lname" type="text" placeholder="Last Name">
+                <input id="email" name="email" type="email" placeholder="Email">
+                <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Confirm Password">
+                <button type="submit">SIGN UP</button>
+            </form>
+        </div>
+        <div id="login" class="form-container show">
+            <form>       
+                <h1>Sign In</h1>
+                <input id="email" name="email" type="email" placeholder="Email">
+                <input id="password" name="password" type="password" placeholder="Password">
+                <button type="submit">SIGN IN</button>
+            </form>
+        </div>
+
+        <div class="side">
+            <div id="panelr" class="side-panel right-panel">
+                <h2>Welcome Back!</h2>
+                <p>Sign in to access your account</p>
+                <button id="signInBtn" class="trans">SIGN IN</button>
+            </div>
+            <div id="panell" class="side-panel left-panel">
+                <h2>Don't have an account?</h2>
+                <p>Sign up to create one!</p>
+                <button id="signUpBtn" class="trans">SIGN UP</button>
+            </div>
+        </div>
+    </div>  
+
+    <script defer>
+      // Switch to the sign-up panel
+      document.getElementById("signUpBtn").addEventListener("click", function() {
+        document.querySelector('.container').classList.add('signup-active');
+      });
+
+      // Switch to the sign-in panel
+      document.getElementById("signInBtn").addEventListener("click", function() {
+        document.querySelector('.container').classList.remove('signup-active');
+      });
+    </script>
+</body>
+</html>
